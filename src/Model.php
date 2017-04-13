@@ -4,6 +4,7 @@ namespace Tylercd100\Database\Eloquent;
 
 use Validator;
 use Illuminate\Database\Eloquent\Model as IlluminateModel;
+use Tylercd100\Database\Eloquent\Exceptions\ValidationException;
 
 abstract class Model extends IlluminateModel
 {
