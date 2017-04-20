@@ -28,7 +28,8 @@
     "minimum-stability": "stable",  
     "require": {
         "illuminate/support": "^5.0",
-        "php": "^5.5.9|^7.0"
+        "php": "^5.5.9|^7.0",
+        "pulkitjalan/cacheable": "^0.2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8|^5.0",

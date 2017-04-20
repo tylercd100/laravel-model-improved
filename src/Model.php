@@ -4,10 +4,15 @@ namespace Tylercd100\Database\Eloquent;
 
 use Validator;
 use Illuminate\Database\Eloquent\Model as IlluminateModel;
+use PulkitJalan\Cacheable\Cacheable;
 use Tylercd100\Database\Eloquent\Exceptions\ValidationException;
 
 abstract class Model extends IlluminateModel
 {
+    use Cacheable {
+        boot as traitboot;
+    }
+
     /**
      * An array of validation rules
      * @var array
@@ -46,6 +51,8 @@ abstract class Model extends IlluminateModel
     protected static function boot()
     {
         parent::boot();
+
+        self::traitboot();
 
         self::saving(function ($model) {
             if (!$model->validate()) {
