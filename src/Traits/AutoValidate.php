@@ -3,7 +3,7 @@
 namespace Tylercd100\Database\Eloquent\Traits;
 
 use Tylercd100\Database\Eloquent\Exceptions\ValidationException;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 trait AutoValidate
 {

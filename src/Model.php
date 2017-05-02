@@ -23,7 +23,6 @@ abstract class Model extends IlluminateModel
     protected static function boot()
     {
         parent::boot();
-        self::bootAutoCache();
         self::bootAutoValidate();
     }
 }
