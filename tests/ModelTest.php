@@ -14,6 +14,6 @@ class ModelTest extends TestCase
 
     public function testCreatingPivotModelInstance()
     {
-        $obj = new UserPivot();
+        $obj = new UserPivot(new User(), [], "fake_table");
     }
 }
