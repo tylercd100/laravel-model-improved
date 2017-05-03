@@ -24,5 +24,6 @@ abstract class Model extends IlluminateModel
     {
         parent::boot();
         self::bootAutoValidate();
+        self::bootAutoCache();
     }
 }
