@@ -15,22 +15,6 @@ trait AutoCache
     public $cacheExpiry = 1440;
 
     /**
-     * The "booting" method of the model.
-     *
-     * @return void
-     */
-    public static function boot()
-    {
-        static::saved(function ($model) {
-            $model->refresh();
-        }, -1);
-
-        static::deleted(function ($model) {
-            $model->refresh();
-        }, -1);
-    }
-
-    /**
      * Create a new Eloquent query builder for the model.
      *
      * @param  \Illuminate\Database\Query\Builder $query

@@ -20,19 +20,6 @@ trait AutoValidate
     protected $messages = [];
 
     /**
-     * A method best used to register Eloquent events when the model boots up
-     * @return void
-     */
-    protected static function boot()
-    {
-        self::saving(function ($model) {
-            if (!$model->validate()) {
-                return false;
-            }
-        });
-    }
-
-    /**
      * Validates the Model
      * @return boolean Whether or not the input is valid
      */

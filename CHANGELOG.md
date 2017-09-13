@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-model-improved` will be documented in this file.
 
+### 1.2.1
+- Fixed the boot method to actually call each trait's functions
+
 ### 1.2.0
 - Added a Pivot Model that extends Laravel's version.
 
