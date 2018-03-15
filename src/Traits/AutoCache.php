@@ -20,7 +20,7 @@ trait AutoCache
      */
     public function newEloquentBuilder($query)
     {
-        if ($this->autoCacheEnabled) {
+        if (static::AUTO_CACHE_ENABLED) {
             return new AutoCacheBuilder($query);
         }
         return new IlluminateBuilder($query);

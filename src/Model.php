@@ -15,7 +15,7 @@ abstract class Model extends IlluminateModel
      *
      * @var int
      */
-    protected $autoCacheEnabled = false;
+    const AUTO_CACHE_ENABLED = true;
 
     /**
      * A method best used to register Eloquent events when the model boots up

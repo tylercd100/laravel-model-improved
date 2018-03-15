@@ -13,5 +13,5 @@ class UserWithoutCache extends Model
      *
      * @var int
      */
-    protected $autoCacheEnabled = false;
+    const AUTO_CACHE_ENABLED = false;
 }
