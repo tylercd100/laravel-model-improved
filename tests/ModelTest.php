@@ -13,22 +13,18 @@ class ModelTest extends TestCase
     public function testCreatingModelInstance()
     {
         $obj = new User();
-    }
-
-    public function testCreatingPivotModelInstance()
-    {
-        $obj = new UserPivot(new User(), [], "fake_table");
+        $this->assertTrue(is_object($obj));
     }
 
     public function testAutoCacheEnabledReturnsCorrectBuilder()
     {
         $builder = with(new User())->newQueryWithoutScopes();
-        $this->assertInstanceof(IlluminateBuilder::class, $builder);
+        $this->assertInstanceof(AutoCacheBuilder::class, $builder);
     }
 
     public function testAutoCacheDisabledReturnsCorrectBuilder()
     {
         $builder = with(new UserWithoutCache())->newQueryWithoutScopes();
-        $this->assertInstanceof(AutoCacheBuilder::class, $builder);
+        $this->assertInstanceof(IlluminateBuilder::class, $builder);
     }
 }
