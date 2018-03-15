@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-model-improved` will be documented in this file.
 
+### 1.3.0
+- Added toggle flags for AutoCache
+
 ### 1.2.1
 - Fixed the boot method to actually call each trait's functions
 
