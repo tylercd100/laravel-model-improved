@@ -22,13 +22,13 @@ class ModelTest extends TestCase
 
     public function testAutoCacheEnabledReturnsCorrectBuilder()
     {
-        $builder = with(new User())->newEloquentBuilder(new IlluminateBuilder);
+        $builder = with(new User())->newQueryWithoutScopes();
         $this->assertInstanceof(IlluminateBuilder::class, $builder);
     }
 
     public function testAutoCacheDisabledReturnsCorrectBuilder()
     {
-        $builder = with(new UserWithoutCache())->newEloquentBuilder(new IlluminateBuilder);
+        $builder = with(new UserWithoutCache())->newQueryWithoutScopes();
         $this->assertInstanceof(AutoCacheBuilder::class, $builder);
     }
 }
