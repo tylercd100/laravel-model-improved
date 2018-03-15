@@ -5,7 +5,7 @@ namespace Tylercd100\Database\Eloquent\Tests;
 use Tylercd100\Database\Eloquent\Tests\Fake\User;
 use Tylercd100\Database\Eloquent\Tests\Fake\UserPivot;
 use Tylercd100\Database\Eloquent\Tests\Fake\UserWithoutCache;
-use Illuminate\Database\Query\Builder as IlluminateBuilder;
+use Illuminate\Database\Eloquent\Builder as IlluminateBuilder;
 use Tylercd100\Database\Eloquent\Builder as AutoCacheBuilder;
 
 class ModelTest extends TestCase

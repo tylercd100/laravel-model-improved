@@ -2,8 +2,8 @@
 
 namespace Tylercd100\Database\Eloquent\Traits;
 
-use Illuminate\Database\Query\Builder as IlluminateBuilder;
-use Tylercd100\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Builder as IlluminateBuilder;
+use Tylercd100\Database\Eloquent\Builder as AutoCacheBuilder;
 use Illuminate\Support\Facades\Cache;
 
 trait AutoCache
@@ -24,13 +24,13 @@ trait AutoCache
 
     /**
      * Create a new Eloquent query builder for the model.
-     *
-     * @param  \Illuminate\Database\Query\Builder $query
-     * @return \PulkitJalan\Cacheable\Eloquent\Builder|static
      */
     public function newEloquentBuilder($query)
     {
-        return $this->autoCacheEnabled ? (new Builder($query)) : (new IlluminateBuilder($query));
+        if ($this->autoCacheEnabled) {
+            return new AutoCacheBuilder($query);
+        }
+        return new IlluminateBuilder($query);
     }
 
     /**
