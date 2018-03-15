@@ -16,18 +16,11 @@ trait AutoCache
     public $cacheExpiry = 1440;
 
     /**
-     * Toggle the auto cache feature.
-     *
-     * @var int
-     */
-    protected $autoCacheEnabled = true;
-
-    /**
      * Create a new Eloquent query builder for the model.
      */
     public function newEloquentBuilder($query)
     {
-        if ($this->autoCacheEnabled) {
+        if (static::AUTO_CACHE_ENABLED) {
             return new AutoCacheBuilder($query);
         }
         return new IlluminateBuilder($query);

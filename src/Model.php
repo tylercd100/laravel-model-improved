@@ -11,6 +11,13 @@ abstract class Model extends IlluminateModel
     use AutoCache, AutoValidate;
 
     /**
+     * Toggle the auto cache feature.
+     *
+     * @var int
+     */
+    const AUTO_CACHE_ENABLED = true;
+
+    /**
      * A method best used to register Eloquent events when the model boots up
      * @return void
      */
